@@ -1,6 +1,8 @@
 import 'package:drink_water/add_water_screen/radial_drink_widget.dart';
 import 'package:flutter/material.dart';
 
+import '../water_amount_counter/water_amount_counter.dart';
+
 class DrinkValue {
   double c;
 
@@ -8,7 +10,8 @@ class DrinkValue {
 }
 
 class NextScreenWidget extends StatefulWidget {
-  const NextScreenWidget({Key? key}) : super(key: key);
+  final UserInput newUserInput;
+  const NextScreenWidget({Key? key, required this.newUserInput}) : super(key: key);
 
   @override
   State<NextScreenWidget> createState() => TitlePageWidgetState();
@@ -71,10 +74,11 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                               ),
                               onPressed: () {
                                 setState(() {
-                                  const a = 2.5;
+                                  var a = widget.newUserInput.userInput;
                                   const b = 0.15;
                                   var percent = (b / a);
                                   drinkValue.c = drinkValue.c + percent;
+                                  print(a);
                                 });
                               },
                               child: const Text(
@@ -103,7 +107,7 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                             ),
                             onPressed: () {
                               setState(() {
-                                const a = 2.5;
+                                var a = widget.newUserInput.userInput;
                                 const b = 0.25;
                                 var percent = (b / a);
                                 drinkValue.c = drinkValue.c + percent;
@@ -140,7 +144,7 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                               ),
                               onPressed: () {
                                 setState(() {
-                                  const a = 2.5;
+                                  var a = widget.newUserInput.userInput;
                                   const b = 0.5;
                                   var percent = (b / a);
                                   drinkValue.c = drinkValue.c + percent;
@@ -172,7 +176,7 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                               ),
                               onPressed: () {
                                 setState(() {
-                                  const a = 2.5;
+                                  var a = widget.newUserInput.userInput;
                                   const b = 1;
                                   var percent = (b / a);
                                   drinkValue.c = drinkValue.c + percent;

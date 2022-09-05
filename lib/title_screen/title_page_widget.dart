@@ -1,4 +1,4 @@
-import 'package:drink_water/add_water_screen/track_water_drunk.dart';
+import 'package:drink_water/water_amount_counter/water_amount_counter.dart';
 import 'package:flutter/material.dart';
 
 import 'lottie_animation.dart';
@@ -75,7 +75,7 @@ class _HydrateMeButtonState extends State<HydrateMeButton> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const NextScreenWidget()));
+                      builder: (context) => const AmountWaterCount()));
             },
             child: Text(
                 style: TextStyle(

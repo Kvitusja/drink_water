@@ -1,6 +1,11 @@
 import 'package:drink_water/add_water_screen/track_water_drunk.dart';
 import 'package:flutter/material.dart';
 
+class UserInput {
+   double userInput;
+  UserInput({required this.userInput});
+}
+
 class AmountWaterCount extends StatefulWidget {
   const AmountWaterCount({Key? key}) : super(key: key);
 
@@ -10,7 +15,7 @@ class AmountWaterCount extends StatefulWidget {
 
 class _AmountWaterCountState extends State<AmountWaterCount> {
   TextEditingController myCountController = TextEditingController();
-
+   var newUserInput = UserInput(userInput: 0);
 
 
   @override
@@ -44,13 +49,16 @@ class _AmountWaterCountState extends State<AmountWaterCount> {
               child: TextField(
                 controller: myCountController,
                 keyboardType: TextInputType.number,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   hintText: 'What is your weight?',
-                  border: OutlineInputBorder(
+                  border: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(
                       Radius.circular(14.0),
                     ),
                   ),
+                  suffixIcon: IconButton(onPressed: () {
+                    myCountController.clear();
+                  }, icon: const Icon(Icons.clear)),
                 ),
               ),
             ),
@@ -70,12 +78,15 @@ class _AmountWaterCountState extends State<AmountWaterCount> {
                   backgroundColor: MaterialStateProperty.all(const Color(0xFF222442),),
                 ),
                 onPressed: () {
+                  setState(() {
+                    newUserInput.userInput = int.parse(myCountController.text) * 0.03;
+                  });
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const NextScreenWidget()));
+                          builder: (context) => NextScreenWidget(newUserInput: newUserInput,)));
                 },
-                child: const Text(
+                child: Text(
                     style: TextStyle(
                         color: Color(0xFFa7a9d1),
                         fontSize: 27,
