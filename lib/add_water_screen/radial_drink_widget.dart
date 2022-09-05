@@ -1,5 +1,5 @@
 import 'dart:math';
-import 'package:drink_water/add_water_screen/next_screen.dart';
+import 'package:drink_water/add_water_screen/track_water_drunk.dart';
 import 'package:flutter/material.dart';
 
 class RadialDrinkWidget extends StatefulWidget {

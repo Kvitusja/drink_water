@@ -75,7 +75,6 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                                   const b = 0.15;
                                   var percent = (b / a);
                                   drinkValue.c = drinkValue.c + percent;
-                                  print(drinkValue.c);
                                 });
                               },
                               child: const Text(
@@ -108,7 +107,6 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                                 const b = 0.25;
                                 var percent = (b / a);
                                 drinkValue.c = drinkValue.c + percent;
-                                print(drinkValue.c);
                               });
                             },
                             child: const Text(
@@ -146,7 +144,6 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                                   const b = 0.5;
                                   var percent = (b / a);
                                   drinkValue.c = drinkValue.c + percent;
-                                  print(drinkValue.c);
                                 });
                               },
                               child: const Text(
@@ -179,7 +176,6 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                                   const b = 1;
                                   var percent = (b / a);
                                   drinkValue.c = drinkValue.c + percent;
-                                  print(drinkValue.c);
                                 });
                               },
                               child: const Text(
