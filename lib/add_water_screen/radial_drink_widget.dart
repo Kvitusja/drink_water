@@ -2,9 +2,12 @@ import 'dart:math';
 import 'package:drink_water/add_water_screen/track_water_drunk.dart';
 import 'package:flutter/material.dart';
 
+import '../water_amount_counter/water_amount_counter.dart';
+
 class RadialDrinkWidget extends StatefulWidget {
   final DrinkValue drinkValue;
-  const RadialDrinkWidget({Key? key, required this.drinkValue})
+  final UserInput newUserInput;
+  const RadialDrinkWidget({Key? key, required this.drinkValue, required this.newUserInput})
       : super(key: key);
 
   @override
@@ -14,14 +17,23 @@ class RadialDrinkWidget extends StatefulWidget {
 class _RadialDrinkWidgetState extends State<RadialDrinkWidget> {
   roundDrunkWater() {
     if (((widget.drinkValue.c * 100).round()) < 100) {
-      return Text(
-          style:
-          const TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 22),
-          '${(widget.drinkValue.c * 100).round()}%');
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+              style:
+              const TextStyle(color: Color(0xFFd5e8f2), fontWeight: FontWeight.w600, fontSize: 22),
+              '${(widget.drinkValue.c * 100).round()}%'),
+          Text(
+              style:
+              const TextStyle(color: Color(0xFFd5e8f2), fontWeight: FontWeight.w600, fontSize: 22),
+              '${(widget.newUserInput.userInput)}L'),
+        ],
+      );
     } else {
       return Text(
           style:
-          TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 20),
+          TextStyle(color: Color(0xFFd5e8f2), fontWeight: FontWeight.w600, fontSize: 20),
           'Amazing! \nYou did it!');
     }
   }
@@ -34,8 +46,8 @@ class _RadialDrinkWidgetState extends State<RadialDrinkWidget> {
       decoration: BoxDecoration(border: Border.all(color: Colors.transparent)),
       child: RadialDrinkPainter(
         percent: widget.drinkValue.c,
-        radialColor: Color(0xFFa7b2d1),
-        backgroundColor: Color(0xFF3c517d),
+        radialColor: Color(0xFF2173d0),
+        backgroundColor: Color(0xFFd5e8f2),
         radialWidth: 8,
         child: roundDrunkWater(),
         //Text('${(widget.drinkValue.c * 100).round()}%',

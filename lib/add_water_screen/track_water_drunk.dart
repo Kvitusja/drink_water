@@ -11,7 +11,8 @@ class DrinkValue {
 
 class NextScreenWidget extends StatefulWidget {
   final UserInput newUserInput;
-  const NextScreenWidget({Key? key, required this.newUserInput}) : super(key: key);
+  const NextScreenWidget({Key? key, required this.newUserInput})
+      : super(key: key);
 
   @override
   State<NextScreenWidget> createState() => TitlePageWidgetState();
@@ -25,32 +26,43 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        iconTheme: const IconThemeData(
+          color: Color(0xFF2173d0),
+        ),
         backgroundColor: Colors.transparent,
-        title: const Text('Drink Water'),
+        title: const Text(
+          'Drink Water',
+          style: TextStyle(
+            color: Color(0xFF2173d0),
+          ),
+        ),
         elevation: 0,
       ),
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.bottomLeft,
-            end: Alignment.topRight,
-            colors: [
-              Color(0xFFa7a9d1),
-              Color(0xFF9a9bb8),
-              Color(0xFF80a4ed),
-              Color(0xFF627db5),
-              Color(0xFF3c517d),
-            ],
-          ),
-        ),
+        color: const Color(0xFFe6f4fc),
+        // decoration: const BoxDecoration(
+        //   gradient: LinearGradient(
+        //     begin: Alignment.bottomLeft,
+        //     end: Alignment.topRight,
+        //     colors: [
+        //       Color(0xFFa7a9d1),
+        //       Color(0xFF9a9bb8),
+        //       Color(0xFF80a4ed),
+        //       Color(0xFF627db5),
+        //       Color(0xFF3c517d),
+        //     ],
+        //   ),
+        // ),
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Center(
-                  child: RadialDrinkWidget(
-                drinkValue: drinkValue,
-              )),
+                child: RadialDrinkWidget(
+                  drinkValue: drinkValue,
+                  newUserInput: widget.newUserInput,
+                ),
+              ),
               const SizedBox(height: 50),
               Center(
                 child: Row(
@@ -59,7 +71,7 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                     Column(
                       children: [
                         SizedBox(
-                          height: 80,
+                          height: 64,
                           width: 120,
                           child: ElevatedButton(
                               style: ButtonStyle(
@@ -70,7 +82,7 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                                   ),
                                 ),
                                 backgroundColor: MaterialStateProperty.all(
-                                    const Color(0xFFa7a9d1)),
+                                    const Color(0xFF2173d0)),
                               ),
                               onPressed: () {
                                 setState(() {
@@ -84,7 +96,7 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                               child: const Text(
                                 '150 ml',
                                 style: TextStyle(
-                                    color: Colors.white,
+                                    color: Color(0xFFd5e8f2),
                                     fontWeight: FontWeight.w600,
                                     fontSize: 22),
                               )),
@@ -92,7 +104,7 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                         ),
                         const SizedBox(height: 10),
                         SizedBox(
-                          height: 80,
+                          height: 64,
                           width: 120,
                           child: ElevatedButton(
                             style: ButtonStyle(
@@ -103,7 +115,7 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                                 ),
                               ),
                               backgroundColor: MaterialStateProperty.all(
-                                  const Color(0xFFa7a9d1)),
+                                  const Color(0xFF2173d0)),
                             ),
                             onPressed: () {
                               setState(() {
@@ -116,7 +128,7 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                             child: const Text(
                               '250 ml',
                               style: TextStyle(
-                                  color: Colors.white,
+                                  color: Color(0xFFd5e8f2),
                                   fontWeight: FontWeight.w600,
                                   fontSize: 22),
                             ),
@@ -129,7 +141,7 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                     Column(
                       children: [
                         SizedBox(
-                          height: 80,
+                          height: 64,
                           width: 120,
                           child: ElevatedButton(
                               style: ButtonStyle(
@@ -140,7 +152,7 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                                   ),
                                 ),
                                 backgroundColor: MaterialStateProperty.all(
-                                    const Color(0xFFa7a9d1)),
+                                    const Color(0xFF2173d0)),
                               ),
                               onPressed: () {
                                 setState(() {
@@ -153,7 +165,7 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                               child: const Text(
                                 '0.5 l',
                                 style: TextStyle(
-                                    color: Colors.white,
+                                    color: Color(0xFFd5e8f2),
                                     fontWeight: FontWeight.w600,
                                     fontSize: 22),
                               )),
@@ -161,7 +173,7 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                         ),
                         const SizedBox(height: 10),
                         SizedBox(
-                          height: 80,
+                          height: 64,
                           width: 120,
                           child: ElevatedButton(
                               style: ButtonStyle(
@@ -172,7 +184,7 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                                   ),
                                 ),
                                 backgroundColor: MaterialStateProperty.all(
-                                    const Color(0xFFa7a9d1)),
+                                    const Color(0xFF2173d0)),
                               ),
                               onPressed: () {
                                 setState(() {
@@ -185,7 +197,7 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                               child: const Text(
                                 '1 l',
                                 style: TextStyle(
-                                    color: Colors.white,
+                                    color: Color(0xFFd5e8f2),
                                     fontWeight: FontWeight.w600,
                                     fontSize: 22),
                               )),

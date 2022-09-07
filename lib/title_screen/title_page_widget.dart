@@ -17,23 +17,29 @@ class _TitlePageWidgetState extends State<TitlePageWidget> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: const Text('Drink Water'),
+        title: const Text(
+          'Drink Water',
+          style: TextStyle(
+            color: Color(0xFFc9eaff),
+          ),
+        ),
         elevation: 0,
       ),
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.bottomLeft,
-            end: Alignment.topRight,
-            colors: [
-              Color(0xFFa7a9d1),
-              Color(0xFF9a9bb8),
-              Color(0xFF80a4ed),
-              Color(0xFF627db5),
-              Color(0xFF3c517d),
-            ],
-          ),
-        ),
+        color: const Color(0xFFd5e8f2),
+        // decoration: const BoxDecoration(
+        //   gradient: LinearGradient(
+        //     begin: Alignment.bottomLeft,
+        //     end: Alignment.topRight,
+        //     colors: [
+        //       Color(0xFFa7a9d1),
+        //       Color(0xFF9a9bb8),
+        //       Color(0xFF80a4ed),
+        //       Color(0xFF627db5),
+        //       Color(0xFF3c517d),
+        //     ],
+        //   ),
+        // ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
@@ -60,8 +66,8 @@ class _HydrateMeButtonState extends State<HydrateMeButton> {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        height: 100,
-        width: 130,
+        height: 60,
+        width: 124,
         child: ElevatedButton(
             style: ButtonStyle(
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -70,7 +76,7 @@ class _HydrateMeButtonState extends State<HydrateMeButton> {
                   ),
                 ),
                 backgroundColor:
-                    MaterialStateProperty.all(const Color(0xFF222442))),
+                    MaterialStateProperty.all(const Color(0xFF2173d0))),
             onPressed: () {
               Navigator.push(
                   context,
@@ -79,10 +85,10 @@ class _HydrateMeButtonState extends State<HydrateMeButton> {
             },
             child: Text(
                 style: TextStyle(
-                    color: Color(0xFFa7a9d1),
-                    fontSize: 27,
+                    color: Color(0xFFd5e8f2),
+                    fontSize: 25,
                     fontWeight: FontWeight.w700),
-                'Hydrate Me')),
+                'Hydrate')),
       ),
     );
   }
