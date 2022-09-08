@@ -7,7 +7,8 @@ import '../water_amount_counter/water_amount_counter.dart';
 class RadialDrinkWidget extends StatefulWidget {
   final DrinkValue drinkValue;
   final UserInput newUserInput;
-  const RadialDrinkWidget({Key? key, required this.drinkValue, required this.newUserInput})
+  const RadialDrinkWidget(
+      {Key? key, required this.drinkValue, required this.newUserInput})
       : super(key: key);
 
   @override
@@ -21,19 +22,25 @@ class _RadialDrinkWidgetState extends State<RadialDrinkWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-              style:
-              const TextStyle(color: Color(0xFFd5e8f2), fontWeight: FontWeight.w600, fontSize: 22),
+              style: const TextStyle(
+                  color: Color(0xFFd5e8f2),
+                  fontWeight: FontWeight.w600,
+                  fontSize: 22),
               '${(widget.drinkValue.c * 100).round()}%'),
           Text(
-              style:
-              const TextStyle(color: Color(0xFFd5e8f2), fontWeight: FontWeight.w600, fontSize: 22),
+              style: const TextStyle(
+                  color: Color(0xFFd5e8f2),
+                  fontWeight: FontWeight.w600,
+                  fontSize: 22),
               '${(widget.newUserInput.userInput)}L'),
         ],
       );
     } else {
       return Text(
-          style:
-          TextStyle(color: Color(0xFFd5e8f2), fontWeight: FontWeight.w600, fontSize: 20),
+          style: TextStyle(
+              color: Color(0xFFd5e8f2),
+              fontWeight: FontWeight.w600,
+              fontSize: 20),
           'Amazing! \nYou did it!');
     }
   }
@@ -50,11 +57,6 @@ class _RadialDrinkWidgetState extends State<RadialDrinkWidget> {
         backgroundColor: Color(0xFFd5e8f2),
         radialWidth: 8,
         child: roundDrunkWater(),
-        //Text('${(widget.drinkValue.c * 100).round()}%',
-        //     style: TextStyle(
-        //         color: Colors.white,
-        //         fontSize: 24,
-        //         fontWeight: FontWeight.w600)),
       ),
     );
   }
@@ -81,8 +83,8 @@ class RadialDrinkPainter extends StatelessWidget {
       fit: StackFit.expand,
       children: [
         CustomPaint(
-            painter:
-                MyPaint(percent, radialColor, backgroundColor, radialWidth)),
+          painter: MyPaint(percent, radialColor, backgroundColor, radialWidth),
+        ),
         Center(
           child: child,
         ),

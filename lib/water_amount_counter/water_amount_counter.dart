@@ -36,20 +36,6 @@ class _AmountWaterCountState extends State<AmountWaterCount> {
       ),
       body: Container(
         color: const Color(0xFFd5e8f2),
-        // const Color(0xFFe6f4fc),
-        // decoration: const BoxDecoration(
-        //   gradient: LinearGradient(
-        //     begin: Alignment.bottomLeft,
-        //     end: Alignment.topRight,
-        //     colors: [
-        //       Color(0xFFa7a9d1),
-        //       Color(0xFF9a9bb8),
-        //       Color(0xFF80a4ed),
-        //       Color(0xFF627db5),
-        //       Color(0xFF3c517d),
-        //     ],
-        //   ),
-        // ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -59,6 +45,7 @@ class _AmountWaterCountState extends State<AmountWaterCount> {
                 style: const TextStyle(
                   color: Color(0xFF2173d0),
                   fontWeight: FontWeight.bold,
+                  fontSize: 20,
                 ),
                 controller: myCountController,
                 keyboardType: TextInputType.number,
@@ -66,6 +53,7 @@ class _AmountWaterCountState extends State<AmountWaterCount> {
                   hintStyle: const TextStyle(
                     color: Color(0xFF2173d0),
                     fontWeight: FontWeight.bold,
+                    fontSize: 20,
                   ),
                   hintText: 'What is your weight?',
                   enabledBorder: const OutlineInputBorder(
@@ -110,7 +98,6 @@ class _AmountWaterCountState extends State<AmountWaterCount> {
                   backgroundColor: MaterialStateProperty.all(
                     const Color(0xFF2173d0),
                   ),
-                  // Color(0xFF222442)
                 ),
                 onPressed: () {
                   setState(() {

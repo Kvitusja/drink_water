@@ -40,19 +40,6 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
       ),
       body: Container(
         color: const Color(0xFFe6f4fc),
-        // decoration: const BoxDecoration(
-        //   gradient: LinearGradient(
-        //     begin: Alignment.bottomLeft,
-        //     end: Alignment.topRight,
-        //     colors: [
-        //       Color(0xFFa7a9d1),
-        //       Color(0xFF9a9bb8),
-        //       Color(0xFF80a4ed),
-        //       Color(0xFF627db5),
-        //       Color(0xFF3c517d),
-        //     ],
-        //   ),
-        // ),
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -70,38 +57,7 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                   children: [
                     Column(
                       children: [
-                        SizedBox(
-                          height: 64,
-                          width: 120,
-                          child: ElevatedButton(
-                              style: ButtonStyle(
-                                shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(32.0),
-                                  ),
-                                ),
-                                backgroundColor: MaterialStateProperty.all(
-                                    const Color(0xFF2173d0)),
-                              ),
-                              onPressed: () {
-                                setState(() {
-                                  var a = widget.newUserInput.userInput;
-                                  const b = 0.15;
-                                  var percent = (b / a);
-                                  drinkValue.c = drinkValue.c + percent;
-                                  print(a);
-                                });
-                              },
-                              child: const Text(
-                                '150 ml',
-                                style: TextStyle(
-                                    color: Color(0xFFd5e8f2),
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 22),
-                              )),
-                          // child: HomMuchDrinkButton(color: Color(0xFFa7a9d1), text: Text('150 ml')),
-                        ),
+                        AddWaterButton(),
                         const SizedBox(height: 10),
                         SizedBox(
                           height: 64,
@@ -133,7 +89,6 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                                   fontSize: 22),
                             ),
                           ),
-                          // child: HomMuchDrinkButton(color: Color(0xFF80a4ed), text: Text('250 ml')),
                         ),
                       ],
                     ),
@@ -144,64 +99,64 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                           height: 64,
                           width: 120,
                           child: ElevatedButton(
-                              style: ButtonStyle(
-                                shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(32.0),
-                                  ),
+                            style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(32.0),
                                 ),
-                                backgroundColor: MaterialStateProperty.all(
-                                    const Color(0xFF2173d0)),
                               ),
-                              onPressed: () {
-                                setState(() {
-                                  var a = widget.newUserInput.userInput;
-                                  const b = 0.5;
-                                  var percent = (b / a);
-                                  drinkValue.c = drinkValue.c + percent;
-                                });
-                              },
-                              child: const Text(
-                                '0.5 l',
-                                style: TextStyle(
-                                    color: Color(0xFFd5e8f2),
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 22),
-                              )),
-                          // child: HomMuchDrinkButton(color: Color(0xFF627db5), text: Text('0.5 l')),
+                              backgroundColor: MaterialStateProperty.all(
+                                  const Color(0xFF2173d0)),
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                var a = widget.newUserInput.userInput;
+                                const b = 0.5;
+                                var percent = (b / a);
+                                drinkValue.c = drinkValue.c + percent;
+                              });
+                            },
+                            child: const Text(
+                              '0.5 l',
+                              style: TextStyle(
+                                  color: Color(0xFFd5e8f2),
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 22),
+                            ),
+                          ),
                         ),
                         const SizedBox(height: 10),
                         SizedBox(
                           height: 64,
                           width: 120,
                           child: ElevatedButton(
-                              style: ButtonStyle(
-                                shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(32.0),
-                                  ),
+                            style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(32.0),
                                 ),
-                                backgroundColor: MaterialStateProperty.all(
-                                    const Color(0xFF2173d0)),
                               ),
-                              onPressed: () {
-                                setState(() {
-                                  var a = widget.newUserInput.userInput;
-                                  const b = 1;
-                                  var percent = (b / a);
-                                  drinkValue.c = drinkValue.c + percent;
-                                });
-                              },
-                              child: const Text(
-                                '1 l',
-                                style: TextStyle(
-                                    color: Color(0xFFd5e8f2),
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 22),
-                              )),
-                          // child: HomMuchDrinkButton(color: Color(0xFF3c517d), text: Text('1 l')),
+                              backgroundColor: MaterialStateProperty.all(
+                                  const Color(0xFF2173d0)),
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                var a = widget.newUserInput.userInput;
+                                const b = 1;
+                                var percent = (b / a);
+                                drinkValue.c = drinkValue.c + percent;
+                              });
+                            },
+                            child: const Text(
+                              '1 l',
+                              style: TextStyle(
+                                  color: Color(0xFFd5e8f2),
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 22),
+                            ),
+                          ),
                         ),
                       ],
                     )
@@ -213,3 +168,49 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
     );
   }
 }
+
+class AddWaterButton extends StatelessWidget {
+  final String text;
+  final double waterConsumed;
+  final Function onPressed;
+  const AddWaterButton({
+    Key? key, required this.text, required this.waterConsumed, required this.onPressed,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 64,
+      width: 120,
+      child: ElevatedButton(
+        style: ButtonStyle(
+          shape: MaterialStateProperty.all<
+              RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(32.0),
+            ),
+          ),
+          backgroundColor: MaterialStateProperty.all(
+              const Color(0xFF2173d0)),
+        ),
+        onPressed: () {
+
+        },
+        child: Text(text,
+          style: TextStyle(
+              color: Color(0xFFd5e8f2),
+              fontWeight: FontWeight.w600,
+              fontSize: 22),
+        ),
+      ),
+    );
+  }
+}
+
+
+//setState(() {
+//var a = widget.newUserInput.userInput;
+//const b = 0.15;
+//var percent = (b / a);
+//drinkValue.c = drinkValue.c + percent;
+// });

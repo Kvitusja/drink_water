@@ -27,19 +27,6 @@ class _TitlePageWidgetState extends State<TitlePageWidget> {
       ),
       body: Container(
         color: const Color(0xFFd5e8f2),
-        // decoration: const BoxDecoration(
-        //   gradient: LinearGradient(
-        //     begin: Alignment.bottomLeft,
-        //     end: Alignment.topRight,
-        //     colors: [
-        //       Color(0xFFa7a9d1),
-        //       Color(0xFF9a9bb8),
-        //       Color(0xFF80a4ed),
-        //       Color(0xFF627db5),
-        //       Color(0xFF3c517d),
-        //     ],
-        //   ),
-        // ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
@@ -69,26 +56,27 @@ class _HydrateMeButtonState extends State<HydrateMeButton> {
         height: 60,
         width: 124,
         child: ElevatedButton(
-            style: ButtonStyle(
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(32.0),
-                  ),
+          style: ButtonStyle(
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(32.0),
                 ),
-                backgroundColor:
-                    MaterialStateProperty.all(const Color(0xFF2173d0))),
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const AmountWaterCount()));
-            },
-            child: Text(
-                style: TextStyle(
-                    color: Color(0xFFd5e8f2),
-                    fontSize: 25,
-                    fontWeight: FontWeight.w700),
-                'Hydrate')),
+              ),
+              backgroundColor:
+                  MaterialStateProperty.all(const Color(0xFF2173d0))),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const AmountWaterCount()));
+          },
+          child: Text(
+              style: TextStyle(
+                  color: Color(0xFFd5e8f2),
+                  fontSize: 25,
+                  fontWeight: FontWeight.w700),
+              'Hydrate'),
+        ),
       ),
     );
   }
