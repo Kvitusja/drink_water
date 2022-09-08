@@ -20,8 +20,7 @@ class NextScreenWidget extends StatefulWidget {
 
 class TitlePageWidgetState extends State<NextScreenWidget> {
   final drinkValue = DrinkValue(c: 0);
-  late double waterConsumed;
-  void onPressed () {
+  void onPressed (double waterConsumed) {
     setState(() {
       var a = widget.newUserInput.userInput;
       var b = waterConsumed;
@@ -113,7 +112,7 @@ class AddWaterButton extends StatelessWidget {
           backgroundColor: MaterialStateProperty.all(
               const Color(0xFF2173d0)),
         ),
-        onPressed: onPressed(waterConsumed),
+        onPressed: ()=> onPressed(waterConsumed),
         child: Text(text,
           style: TextStyle(
               color: Color(0xFFd5e8f2),

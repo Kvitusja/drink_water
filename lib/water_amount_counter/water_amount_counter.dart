@@ -124,4 +124,45 @@ class _AmountWaterCountState extends State<AmountWaterCount> {
       ),
     );
   }
+
+Widget weightTextField() {
+    return TextField(
+              style: const TextStyle(
+                color: Color(0xFF2173d0),
+                fontWeight: FontWeight.bold,
+              ),
+              controller: myCountController,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                hintStyle: const TextStyle(
+                  color: Color(0xFF2173d0),
+                  fontWeight: FontWeight.bold,
+                ),
+                hintText: 'What is your weight?',
+                enabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    width: 2.0,
+                    color: Color(0xFF2173d0),
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(14.0),
+                  ),
+                ),
+                focusedBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    width: 4.0,
+                    color: Color(0xFF2173d0),
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(14.0),
+                  ),
+                ),
+                suffixIcon: IconButton(
+                    onPressed: () {
+                      myCountController.clear();
+                    },
+                    icon: const Icon(Icons.clear)),
+              ),
+            );
+  }
 }
