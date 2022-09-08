@@ -20,6 +20,15 @@ class NextScreenWidget extends StatefulWidget {
 
 class TitlePageWidgetState extends State<NextScreenWidget> {
   final drinkValue = DrinkValue(c: 0);
+  late double waterConsumed;
+  void onPressed () {
+    setState(() {
+      var a = widget.newUserInput.userInput;
+      var b = waterConsumed;
+      var percent = (b / a);
+      drinkValue.c = drinkValue.c + percent;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,107 +66,17 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
                   children: [
                     Column(
                       children: [
-                        AddWaterButton(),
+                        AddWaterButton(text: "150 ml", waterConsumed: 0.15, onPressed: onPressed),
                         const SizedBox(height: 10),
-                        SizedBox(
-                          height: 64,
-                          width: 120,
-                          child: ElevatedButton(
-                            style: ButtonStyle(
-                              shape: MaterialStateProperty.all<
-                                  RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(32.0),
-                                ),
-                              ),
-                              backgroundColor: MaterialStateProperty.all(
-                                  const Color(0xFF2173d0)),
-                            ),
-                            onPressed: () {
-                              setState(() {
-                                var a = widget.newUserInput.userInput;
-                                const b = 0.25;
-                                var percent = (b / a);
-                                drinkValue.c = drinkValue.c + percent;
-                              });
-                            },
-                            child: const Text(
-                              '250 ml',
-                              style: TextStyle(
-                                  color: Color(0xFFd5e8f2),
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 22),
-                            ),
-                          ),
-                        ),
+                        AddWaterButton(text: "250ml", waterConsumed: 0.25, onPressed: onPressed)
                       ],
                     ),
                     const SizedBox(width: 25),
                     Column(
                       children: [
-                        SizedBox(
-                          height: 64,
-                          width: 120,
-                          child: ElevatedButton(
-                            style: ButtonStyle(
-                              shape: MaterialStateProperty.all<
-                                  RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(32.0),
-                                ),
-                              ),
-                              backgroundColor: MaterialStateProperty.all(
-                                  const Color(0xFF2173d0)),
-                            ),
-                            onPressed: () {
-                              setState(() {
-                                var a = widget.newUserInput.userInput;
-                                const b = 0.5;
-                                var percent = (b / a);
-                                drinkValue.c = drinkValue.c + percent;
-                              });
-                            },
-                            child: const Text(
-                              '0.5 l',
-                              style: TextStyle(
-                                  color: Color(0xFFd5e8f2),
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 22),
-                            ),
-                          ),
-                        ),
+                        AddWaterButton(text: "0,5l", waterConsumed: 0.5, onPressed: onPressed),
                         const SizedBox(height: 10),
-                        SizedBox(
-                          height: 64,
-                          width: 120,
-                          child: ElevatedButton(
-                            style: ButtonStyle(
-                              shape: MaterialStateProperty.all<
-                                  RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(32.0),
-                                ),
-                              ),
-                              backgroundColor: MaterialStateProperty.all(
-                                  const Color(0xFF2173d0)),
-                            ),
-                            onPressed: () {
-                              setState(() {
-                                var a = widget.newUserInput.userInput;
-                                const b = 1;
-                                var percent = (b / a);
-                                drinkValue.c = drinkValue.c + percent;
-                              });
-                            },
-                            child: const Text(
-                              '1 l',
-                              style: TextStyle(
-                                  color: Color(0xFFd5e8f2),
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 22),
-                            ),
-                          ),
-                        ),
+                        AddWaterButton(text: "1L", waterConsumed: 1, onPressed: onPressed)
                       ],
                     )
                   ],
@@ -168,6 +87,7 @@ class TitlePageWidgetState extends State<NextScreenWidget> {
     );
   }
 }
+
 
 class AddWaterButton extends StatelessWidget {
   final String text;
@@ -193,9 +113,7 @@ class AddWaterButton extends StatelessWidget {
           backgroundColor: MaterialStateProperty.all(
               const Color(0xFF2173d0)),
         ),
-        onPressed: () {
-
-        },
+        onPressed: onPressed(waterConsumed),
         child: Text(text,
           style: TextStyle(
               color: Color(0xFFd5e8f2),
@@ -214,3 +132,4 @@ class AddWaterButton extends StatelessWidget {
 //var percent = (b / a);
 //drinkValue.c = drinkValue.c + percent;
 // });
+
